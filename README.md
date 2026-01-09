@@ -1,54 +1,46 @@
-# 🏛️ Trading Systems Architect | MQL5 & Infrastructure Specialist
+# 🏛️ MQL5 Trading Systems Architecture Framework
 
-I specialize in the architecture of high-performance automated trading systems, with a focus on bridging the gap between institutional-grade execution and modern full-stack backends. 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![MQL5](https://img.shields.io/badge/Language-MQL5-blue.svg)](https://www.mql5.com/)
+[![Latency](https://img.shields.io/badge/Latency-Sub--800ms-green.svg)](#-bridge-architecture)
 
-### 🎯 Core Focus
-* **Low-Latency Execution:** Optimizing signal propagation to sub-800ms for global copy-trading networks.
-* **MQL5 Engineering:** Advanced Expert Advisor (EA) development using object-oriented principles.
-* **Hybrid Ecosystems:** Building REST/WebSocket bridges between MetaTrader 5 and Node.js environments.
-* **AI-Driven Logic:** Orchestrating multi-agent systems for market analysis and automated risk management.
+A professional-grade structural framework for MetaTrader 5, designed for high-performance automated trading and real-time copy-trading infrastructure. This repository provides a modular "Skill Library" that separates analysis, execution, and risk management into an institutional-grade architecture.
 
----
 
-### 🧰 The Tech Stack
-* **Trading:** MQL5, MT5, PineScript, ZeroMQ.
-* **Backend:** Node.js (TypeScript), PostgreSQL, Redis, Prisma ORM.
-* **DevOps:** Low-latency API design, Distributed Systems, Secure Auth.
-* **Data/AI:** ONNX integration, Multi-agent orchestration.
 
----
+## 🛠️ Framework Components
 
-### 📂 Featured MQL5 Skill Libraries
-*Documentation & standards for institutional-grade development:*
+This repository is organized into three core architectural pillars:
 
-#### ⚡ [Core-Bridge-Architecture](https://github.com/your-username/repo-link)
-> Standards for MT5-to-Web communication. Focuses on minimizing latency and ensuring data integrity during high-volatility events.
+### 1. ⚡ Bridge Architecture (`BridgeInterface.mqh`)
+Engineered for the modern fintech stack. This library handles the communication between the MT5 terminal and external backends (Node.js/PostgreSQL).
+* **Target Latency:** Sub-800ms signal propagation.
+* **REST Integration:** Standardized POST/PATCH methods for signal routing and dashboard synchronization.
+* **Security:** JWT/Bearer token authentication ready.
 
-#### 🤖 [Multi-Agent-EA-Logic](https://github.com/your-username/repo-link)
-> A framework for building EAs that use separate "Observer" and "Executor" agents to reduce computational load on the main trading thread.
+### 2. 🤖 Multi-Agent Logic (`ObserverAgent.mqh`)
+Moving beyond monolithic code. This library implements the **Observer Design Pattern** to decouple market analysis from trade execution.
+* **Observer Agents:** Specialized classes for AI-driven pattern recognition and volume flow.
+* **Signal Normalization:** Translates complex indicators into a normalized "Signal Pulse" (-1.0 to 1.0) for the executor.
+* **Scalability:** Easily plug in new AI models or technical agents without modifying core execution logic.
 
-#### 🛡️ [Risk-Management-Framework](https://github.com/your-username/repo-link)
-> Comprehensive libraries for dynamic position sizing, equity protection, and automated "kill-switches" for black-swan events.
-
-#### 🧪 [Testing-&-Optimization](https://github.com/your-username/repo-link)
-> Protocols for Walk-Forward Analysis (WFA) and Monte Carlo stress-testing to validate strategy robustness beyond backtesting.
+### 3. 🛡️ Risk Management (`RiskManager.mqh`)
+Institutional safety protocols designed to protect capital under high-volatility conditions.
+* **Dynamic Sizing:** Automatic lot calculation based on account equity and broker-specific tick values.
+* **Equity Kill-Switch:** Account-wide drawdown and daily loss monitoring.
+* **Exposure Control:** Multi-symbol position validation to prevent over-leveraging.
 
 ---
 
-### 📈 System Performance Benchmark
-| Metric | Standard |
-| :--- | :--- |
-| **Signal Latency** | < 800ms (Global Distribution) |
-| **Uptime** | 99.9% (Trading Hours) |
-| **Concurrency** | 10k+ Simultaneous Socket Connections |
-| **Architecture** | Modular / Event-Driven |
+## 📂 Repository Structure
 
----
-
-### 📫 Connect with me
-* **LinkedIn:** [Your Profile Link]
-* **Email:** [Your Professional Email]
-* **Telegram:** [Your Handle]
-
----
-*"In automated trading, code isn't just logic—it's capital management."*
+```text
+📂 MQL5-Architect-Framework
+ ┣ 📂 Include
+ ┃ ┣ 📜 BridgeInterface.mqh   # External API & Node.js Bridge
+ ┃ ┣ 📜 ObserverAgent.mqh    # AI Analysis & Signal Generation
+ ┃ ┗ 📜 RiskManager.mqh       # Capital Protection & Lot Sizing
+ ┣ 📂 Experts
+ ┃ ┗ 📜 ArchitectMainEA.mq5   # Implementation example
+ ┣ 📜 LICENSE                 # MIT License
+ ┗ 📜 README.md               # Documentation
